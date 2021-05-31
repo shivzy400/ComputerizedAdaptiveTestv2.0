@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="row justify-content-center">
+        <div class="col-md-12 fadeOut">
+                {% with messages = get_flashed_messages(with_categories=True) %}
+                    {% if messages %}
+                        {% for category , message in messages %}
+                            <div class="alert alert-{{ category }}">{{ message }}</div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-12 text-center ">
+            <article class="media content-section">
+                <div class="media-body">
+                <div class="header-section">
+                    <h1 class="article-title">Computerized Adaptive Test - II</h1>
+                    <p class="article-content">Towards creating an environment where students with different ability levels can be judged according to their competency</p>
+                </div>
+                </div>
+            </article>
+        </div>
+
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <article class="media content-section">
+                <div class="media-body">
+                    <legend class="border-bottom mb 4"><h3>About</h3></legend>
+                    <p class="article-content">Computerized adaptive tests are designed to adjust their level of difficulty based on the responses provided to match the knowledge and ability of a test taker. If a student gives a wrong answer, the computer follows up with an easier question; if the student answers correctly, the next question will be more difficult. CATs represent an attempt to measure the abilities of individual students more precisely, while avoiding some of the issues often associated with the “one-size-fits-all” nature of Traditional tests. They are also used to identify students who may need specialized academic support in a specific skill</p>
+                </div>
+            </article>
+        </div>
+
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <article class="media content-section">
+                <div class="media-body">
+                    <legend class="border-bottom mb 4"><h3>Getting Started</h3></legend>
+                    <div class="text-center">
+                        <p>Content You can put any information here you'd like. You can put any information here you'd like.</p>
+                        <a class="btn btn-info btn-lg m-1 btn-style" href="{{ url_for('pretest_page') }}">Give Test</a>
+                        <a class="btn btn-outline-secondary btn-lg m-1 btn-style" href="{{ url_for('rules_page') }}">See Rules</a>
+                    </div>
+                </div>
+                
+            </article>
+        </div>
+
+    </div>
+
+    
+    
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="content-section">
+                <div class="media">
+                <div class="media-body">
+                    <h5 class=""><pre>Q.{{ count }}) {{ question.ques }}</pre></h5>
+                    <hr class="mt-2 mb-3"/>
+                    <ul type="None">
+                        <li class=""><pre>a) {{ question.option_1 }}</pre></li>
+                        <li class=""><pre>b) {{ question.option_2 }}</pre></li>
+                        {% if question.option_3 %}
+                            <li class=""><pre>c) {{ question.option_3 }}</pre></li>
+                        {% endif %}
+                        {% if question.option_3 %}
+                            <li class=""><pre>d) {{ question.option_4 }}</pre></li>
+                        {% endif %}
+                    </ul>
+                    <form action="" method="POST">
+                        {{ form.hidden_tag() }}
+                        <fieldset class="form-group">
+                            <div class="form-group">
+                                {{ form.options.label(class="form-control-label") }}
+                                {{ form.options(class="form-control form-control-lg") }}
+                            </div>
+                        </fieldset>
+                        <hr class="mt-2 mb-3"/>
+                        <div class="form-group">
+                            {{ form.submit(class="btn btn-outline-info") }}
+                        </div>
+                    </form>
+                    <div>
+                        Difficulty : {{ question.difficulty }}
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
